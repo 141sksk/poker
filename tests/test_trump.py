@@ -1,5 +1,5 @@
 import unittest
-from models.trump import Card, Rank, Suit, Deck, InvalidOperationError
+from models.trump import Card, Rank, Suit, Deck, InvalidOperationError, PokerHand
 
 
 class TestCard(unittest.TestCase):
@@ -93,6 +93,13 @@ class TestRank(unittest.TestCase):
         self.assertFalse(Rank.JACK > Rank.QUEEN)
         self.assertTrue(Rank.THREE < Rank.FOUR)
         self.assertTrue(Rank.THREE < Rank.ACE)
+
+class TestPokerHand(unittest.TestCase):
+
+    def test_hands(self):
+        pokerhand = PokerHand()
+        self.assertTrue(len(pokerhand.pokerhand) == 5)
+        self.assertFalse(len(pokerhand.pokerhand) != 5)
 
 if __name__ == "__main__":
     unittest.main()

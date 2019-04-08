@@ -101,3 +101,15 @@ class Deck:
     
     def shuffle(self):
         random.shuffle(self.cards)
+
+class PokerHand:
+
+    def __init__(self):
+        self.pokerhand = []
+    
+    def draw_cards(self):
+        while len(self.pokerhand) < 5:
+            self.pokerhand.append()
+
+    def discard(self):
+        pass
